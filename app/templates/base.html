@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>{% block title %} TO DO APP {% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+<body>
+    
+        <header>
+            <div class="container">
+                <h1> To Do App </h1>
+                <nav>
+                    {% if 'user' in session %}
+                    <a href="{{ url_for('tasks.view_task') }}">Home</a>  
+                    <a href="{{ url_for('auth.logout') }}">Logout</a> 
+                    {% else %}
+                    <a href="{{ url_for('auth.login') }}">Login</a> 
+                    {% endif %}
+                </nav>
+            </div>
+        </header>
+        <main class="container">
+            {% with messages = get_flashed_messages(with_categories=True) %}
+             {% if messages %}
+              {% for category, message in messages %}
+              <div class="flash {{ category }}">{{ message }}</div>
+              {% endfor %}
+             {% endif %}
+            {% endwith %}
+
+            {% block content %}
+            {% endblock %}
+        </main>
+        <footer class="container">
+            <p>&copy; 2026 My Flask To Do App</p>
+        </footer>
+</body>
+</html>

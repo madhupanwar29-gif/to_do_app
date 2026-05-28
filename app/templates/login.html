@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %} Login {% endblock %}
+
+{% block content %} 
+
+<div class="login-box">
+    <h2>Login</h2>
+    <form method="post">
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" name="username" id="username" required>
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" required>
+        </div>
+        <button type="submit" class="btn">Login</button>
+    </form>
+    <p style="text-align: center; margin-top: 15px;">
+        Don't have an account? <a href="{{ url_for('auth.register') }}" style="color: #007bef; text-decoration: none;">Register here</a>
+    </p>
+</div>
+
+{% endblock %}
