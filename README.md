@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 # To-Do App
 
@@ -29,3 +30,7 @@ A simple yet elegant Flask-based To-Do application with user authentication and 
 ```bash
 git clone https://github.com/yourusername/to_do_app.git
 cd to_do_app
+=======
+# to_do_app
+A Flask To-Do App with User Authentication and Dark Theme
+>>>>>>> a7af80237b3979c59049b55e3d80aa4adbeca7fc
